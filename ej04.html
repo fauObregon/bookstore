@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Page Title</title>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+</html>
+
+<body>
+    <main>
+        <table>
+            <thead>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+            </thead>
+
+            <tbody>
+                <tr v-for="(item ,idx) in users" style="text-transform: uppercase">
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.apellido}}</td>
+                    <td><input type="button" value="Editar"></td>
+                    <td><input type="button" value="Eliminar"></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <form @submit.prevent="createUser">
+            <input type="text" placeholder="nombre" v-model='objUser.nombre' style="text-transform: uppercase"/>
+            <input type="text" placeholder="apellido" v-model='objUser.apellido'/>
+            <input type="submit" value="GUARDAR"/> 
+        </form>
+        {{ $data }}
+
+    </main>
+</body>
+<!-- este script es donde contendremos todos los componentes -->
+<script type="text/javascript">
+    new Vue({
+        el:'main',
+        data:{
+            users:[
+                {'nombre':'Fausto','apellido':'Obregon'},
+                {'nombre':'MISALE','apellido':'Cabezas'},
+                {'nombre':'Jajjjaj','apellido':'Jojojpo'}
+            ],
+            //declaeamos el objeto
+            objUser:{'nombre':null,'apellido':null}
+        },
+
+        methods:{
+            createUser(){
+                //se agrega el objeto al array
+                this.users.unshift(this.objUser);
+                this.orderUser;
+                //se incializa el objeto
+                this.objUser={'nombre':null,'apellido':null};
+            }
+        },
+        computed:{
+            orderUser(){
+                return this.users.sort(function(a,b){
+                    if(a.nombre > b.nombre){
+                        return 1;
+                    }
+                    if(a.nombre < b.nombre){
+                        return -1;
+                    }
+                });
+            }
+        }
+    });
+</script>

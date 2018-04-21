@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Page Title</title>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+</html>
+
+<body>
+    <main>
+        <table>
+            <thead>
+                <th>NOMBRE</th>
+                <th>CEDULA</th>
+                <th>TELEFONO</th>
+                <th>EDAD</th>
+                <th>CONDICION</th>
+            </thead>
+
+            <tbody>
+                <tr v-for="(item ,idx) in users" style="text-transform: uppercase">
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.cedula}}</td>
+                    <td>{{item.telefono}}</td>
+                    <td>{{item.edad}}</td>
+                    <td>
+                        <b v-if="item.edad && item.edad >= 18">MAYOR DE EDAD</b>
+                        <b v-else if="item.edad && item.edad < 18 && item.edad != null">menor DE EDAD</b>
+                    </td>
+                    
+                </tr>
+            </tbody>
+
+        </table>
+
+        <form @submit.prevent="createUser">
+            <input type="text" placeholder="nombre" v-model='objUser.nombre' />
+            <input type="text" placeholder="cedula" v-model='objUser.cedula'/>
+            <input type="text" placeholder="telefono" v-model='objUser.telefono'/>
+            <input type="text" placeholder="edad" v-model='objUser.edad'/>
+            <input type="submit" value="GUARDAR"/> 
+        </form>
+        {{ $data }}
+        
+    </main>
+</body>
+<!-- este script es donde contendremos todos los componentes -->
+<script type="text/javascript">
+    new Vue({
+        el:'main',
+        data:{
+            users:[
+                {'nombre':null,'cedula':null,'telefono':null,'edad':null},
+                
+            ],
+            //declaramos el objeto
+            objUser:{'nombre':null,'cedula':null,'telefono':null,'edad':null}
+        },
+
+        methods:{
+            createUser(){
+                //se agrega el objeto al array
+                this.users.unshift(this.objUser);
+                //se incializa el objeto
+                this.objUser={'nombre':null,'cedula':null,'telefono':null,'edad':null};
+            }
+        },
+        
+    });
+</script>
