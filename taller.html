@@ -26,10 +26,8 @@
                     <td>{{item.cedula}}</td>
                     <td>{{item.telefono}}</td>
                     <td>{{item.edad}}</td>
-                    <td>
-                        <b v-if="item.edad && item.edad >= 18">MAYOR DE EDAD</b>
-                        <b v-else if="item.edad && item.edad < 18 && item.edad != null">menor DE EDAD</b>
-                    </td>
+                    <td v-if="item.edad && item.edad >= 18">MAYOR DE EDAD</td>
+                    <td v-else-if="item.edad && item.edad < 18">MENOR DE EDAD</td>
                     
                 </tr>
             </tbody>
