@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 Vue.use(Vuex);
 
+import authModule from '@/modules/auth'
+
 //export es un return   
 export default new Vuex.Store({
     // dentro de un JSON cada objeto se seàra con una coma
@@ -33,6 +35,6 @@ export default new Vuex.Store({
         }
     },
     modules:{
-        
+        authModule
     }
 });
