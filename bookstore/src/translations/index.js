@@ -109,7 +109,7 @@ export default {
         about: {
             title: 'Desarrollado por {app}',
             content: 'Ingeniero en Sistemas computacionales',
-            call_to_action: 'Contacto: 0999999999',
+            call_to_action: 'Contacto: 0989898989',
             action_button: 'Linkedin'
         },
     },

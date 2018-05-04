@@ -14,7 +14,6 @@
           <v-divider class="my-3"></v-divider>
           <div class="title mb-3">{{ $t('about.call_to_action') }}</div>
           <v-btn large color="primary" class="mx-0">{{ $t('about.action_button')}}</v-btn>
-          <a href="www.facebook.com">s</a>
         </v-flex>
       </v-layout>
     </v-container>
