@@ -1,5 +1,5 @@
 <template>
-    <auth-form actions="login" v-on:process="login($event)" />
+    <auth-form action="login" v-on:process="login($event)" />
 </template>
 
 <script>

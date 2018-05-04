@@ -105,9 +105,15 @@ export default {
             products_qty: 'Cantidad de libros',
             date: 'Fecha del pedido',
             return_orders_list: 'Volver al listado de pedidos'
-        }
+        },
+        about: {
+            title: 'Desarrollado por {app}',
+            content: 'Ingeniero en Sistemas computacionales',
+            call_to_action: 'Contacto: 0999999999',
+            action_button: 'Linkedin'
+        },
     },
     en: {
     
     }
-}
+    }

@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 Vue.use(Vuex);
 
-import authModule from '@/modules/auth'
+import authModule from '@/modules/auth';
 
 //export es un return   
 export default new Vuex.Store({
@@ -12,8 +12,8 @@ export default new Vuex.Store({
         loaded: false,
         alert:{
             type:'success',
-            shor: false,
-            message: '',
+            show: false,
+            message: ''
         }
     },
     // la mutacciones son los fectos o etados o cambios que tendran las variables globales de mi proyecto
@@ -31,7 +31,7 @@ export default new Vuex.Store({
                 state.alert.type = 'success';
                 state.alert.show = false;
                 state.alert.message = '';
-            });
+            },data.setTimeout);
         }
     },
     modules:{

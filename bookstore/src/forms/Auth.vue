@@ -75,7 +75,7 @@
     },
     methods: {
 		  submit () {
-		    this.$emit('process', {email: this.email, password: this.password}); // emit esta pasando un valor hacia el padre
+		    this.$emit('process', {email: this.email, password: this.password});
       }
     }
 	}

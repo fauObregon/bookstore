@@ -10,6 +10,7 @@
 	</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
+		<v-btn flat to="/about">acerca de</v-btn>
       <v-btn flat to="/login">{{ $t('navigation.login') }}</v-btn>
       <v-btn flat to="/register">{{ $t('navigation.register') }}</v-btn>
     </v-toolbar-items>
@@ -48,13 +49,13 @@
 </template>
 
 <script>
-import navigationMixing from '@/mixing/navigation'
+	import navigationMixing from '@/mixing/navigation';
 	export default{
-    name: "guest-navigation",
-    mixins: [navigationMixing],
+		name: "guest-navigation",
+		mixins:[navigationMixing],
 		data(){
 			return{
-				drawer: true,
+				drawer:true,
 				items:[
 					{title: 'Inicio', icon:'home',to:'/' },
 					{title: 'Login', icon:'forward',to:'/login' },

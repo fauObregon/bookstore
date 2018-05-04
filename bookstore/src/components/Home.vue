@@ -4,7 +4,9 @@
       <v-layout align-center>
         <v-flex>
             <!-- $t va para acceder al archivo de traducion -->
-          <h3 class="display-3">{{ $t('welcome.title',{app: 'Vuejs 2 + Firestore'}) }}</h3>
+          <h3 class="display-3">
+            {{ $t('welcome.title',{app: 'Vuejs 2 + Firestore'}) }}
+          </h3>
           <span class="subheading">{{ $t('welcome.content') }}</span>
           <v-divider class="my-3"></v-divider>
           <div class="title mb-3">{{ $t('welcome.call_to_action') }}</div>

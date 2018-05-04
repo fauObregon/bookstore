@@ -15,7 +15,7 @@
 
 <script>
 import AppFooter from "@/components/Footer";
-import GuestNavigation from "@/navigation/Guest";
+import GuestNavigation from "@/navigations/guest";
 
 export default {
   components:{

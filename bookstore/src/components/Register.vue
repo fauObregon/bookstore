@@ -1,11 +1,12 @@
 <template>
-    <auth-form actions="register" v-on:process="register($event)" />
+    <auth-form action="register" v-on:process="register($event)" />
 </template>
 
 <script>
     import AuthForm from '@/forms/Auth';
+    import {db} from '@/main';
     export default {
-        name: 'Register',
+        name: 'register',
         components: { AuthForm },
         methods: {
             register(user){
@@ -15,7 +16,7 @@
                     const data = {
                         uid: userRegistered.uid,
                         email: user.email,
-                        rol: 'customer'
+                        role: 'customer'
                     };
                     db.collection('users').doc(userRegistered.uid).set(data)
                     .then(()=>{
