@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 import authModule from '@/modules/auth';
+import productModule from '@/modules/products';
 
 //export es un return   
 export default new Vuex.Store({
@@ -35,6 +36,6 @@ export default new Vuex.Store({
         }
     },
     modules:{
-        authModule
+        authModule, productModule
     }
 });
