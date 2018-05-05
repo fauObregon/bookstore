@@ -45,8 +45,7 @@ const router = new Router({
       path: '/about',
       name: 'about',
       component: About,
-      meta: {Auth:false, title:'About'},
-      beforeEnter: (to, from, next) => beforeEnter(to, from, next)
+      meta: {Auth:false, title:'About'}
     }
   ]
 })

@@ -5,12 +5,12 @@
     
     <v-toolbar-title>
     		<v-btn color="accent" to="/">
-    			CURSO VUE
+    			CURSO VUE 
     		</v-btn>
 	</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-		<v-btn flat to="/about">acerca de</v-btn>
+		<v-btn flat to="/about">{{ $t('navigation.about') }}</v-btn>
       <v-btn flat to="/login">{{ $t('navigation.login') }}</v-btn>
       <v-btn flat to="/register">{{ $t('navigation.register') }}</v-btn>
     </v-toolbar-items>
@@ -30,8 +30,8 @@
 					</v-list-tile-title>
 				</v-list-tile-content>			
 			</v-list-tile>
-
-      		<v-divider/>
+			
+			<v-divider/>
 			<v-list-tile @click="toggleDrawer">
 				<v-list-tile-action>
 						<v-icon>arrow_back</v-icon>
@@ -47,7 +47,6 @@
 
 </div>
 </template>
-
 <script>
 	import navigationMixing from '@/mixing/navigation';
 	export default{
@@ -55,7 +54,7 @@
 		mixins:[navigationMixing],
 		data(){
 			return{
-				drawer:true,
+				drawer:false,
 				items:[
 					{title: 'Inicio', icon:'home',to:'/' },
 					{title: 'Login', icon:'forward',to:'/login' },
