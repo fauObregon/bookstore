@@ -6,6 +6,7 @@ import Login from '@/components/Login'
 import About from '@/components/About'
 import AdminHome from '@/components/AdminHome'
 import AdminProducts from '@/components/AdminProducts'
+import ShopHome from '@/components/ShopHome'
 
 Vue.use(Router)
 
@@ -45,13 +46,12 @@ const router = new Router({
     },
     {
       path: '/admin',
-      name: 'admin',
+      name: 'dmin',
       component: AdminHome,
       meta:{Auth:true, title:'Administracion','role':'admin'},
       children: [
         {
           path: 'products',
-          name: 'AdminProducts',
           component: AdminProducts,
           meta: {title:'Administrar libros'}
         }
@@ -62,6 +62,12 @@ const router = new Router({
       name: 'about',
       component: About,
       meta: {Auth:false, title:'About'}
+    },
+    {
+      path: '/shop',
+      name: 'shop',
+      component: ShopHome,
+      meta:{Auth:true, title:'Tienda'}
     }
   ]
 })

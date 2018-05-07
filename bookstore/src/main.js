@@ -7,13 +7,11 @@ import router from './router'
 import firebase from 'firebase'
 import 'firebase/firestore'
 import firebaseConfig from '@/config/firebase';
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig); 
 firebase.firestore().settings( { timestampsInSnapshots: true })
+export const db=firebase.firestore(); 
 
-export const db = firebase.firestore();
-//db.firestore.settings({ timestampsInSnapshots: true });
 
-//
 import i18n from '@/config/i18n';
 import store from '@/store';
 
@@ -44,5 +42,4 @@ new Vue({
       }
     })
   }
-
 })
